@@ -1,0 +1,83 @@
+@import "base/reset";
+
+#main p {
+  color: #00ff00;
+  width: 97%;
+
+  .redbox {
+    background-color: #ff0000;
+    color: #000000;
+  }
+}
+#main {
+  width: 97%;
+
+  p, div {
+    font-size: 2em;
+    a { font-weight: bold; }
+  }
+
+  pre { font-size: 3em; }
+}
+.funky {
+  font: {
+    family: fantasy;
+    size: 30em;
+    weight: bold;
+  }
+}
+
+/* This comment is
+ * several lines long.
+ * since it uses the CSS comment syntax,
+ * it will appear in the CSS output. */
+body { color: black; }
+
+
+// These comments are only one line long each.
+// They won't appear in the CSS output,
+// since they use the single-line comment syntax.
+a { color: green; }
+
+@mixin firefox-message($selector) {
+  body.firefox #{$selector}:before {
+    content: "Hi, Firefox users!";
+  }
+}
+
+@include firefox-message(".header");
+
+p {
+  $font-size: 12px;
+  $line-height: 30px;
+  font: #{$font-size}/#{$line-height};
+}
+
+.sidebar {
+  width: 300px;
+  @media screen and (orientation: landscape) {
+    width: 500px;
+  }
+}
+
+p {
+  @if 1 + 1 == 2 { border: 1px solid;  }
+  @if 5 < 3      { border: 2px dotted; }
+  @if null       { border: 3px double; }
+}
+
+//以上代码为测试
+$height:100% !default;
+$width:50% !default;
+$bg: rgba(0, 255, 177, 0.4);
+.mian{
+  margin:{
+    left:0;
+    right:auto;
+  }
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background:$bg;
+  padding:0;
+}
